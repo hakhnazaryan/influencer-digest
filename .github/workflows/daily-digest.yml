@@ -1,0 +1,23 @@
+name: Daily Influencer Digest
+
+on:
+  schedule:
+    # 18:30 UTC = 22:30 Yerevan time, every day
+    - cron: "30 18 * * *"
+  workflow_dispatch: {}   # optional "Run workflow" button for testing
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Send today's posts to Telegram
+        env:
+          TWITTERAPI_KEY: ${{ secrets.TWITTERAPI_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          DIGEST_TZ: Asia/Yerevan
+        run: python digest.py
