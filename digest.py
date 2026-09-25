@@ -108,6 +108,7 @@ def main():
 
     todays = []
     for handle in load_handles():
+        time.sleep(6)  # free plan allows ~1 request per 5 seconds
         try:
             tweets = fetch_latest_tweets(handle, api_key)
         except Exception as e:  # one bad account shouldn't kill the whole run
