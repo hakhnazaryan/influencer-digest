@@ -99,9 +99,9 @@ def send_telegram(token, chat_id, text):
 
 
 def main():
-    api_key = os.environ["TWITTERAPI_KEY"]
-    bot_token = os.environ["TELEGRAM_BOT_TOKEN"]
-    chat_id = os.environ["TELEGRAM_CHAT_ID"]
+    api_key = os.environ["TWITTERAPI_KEY"].strip()
+    bot_token = os.environ["TELEGRAM_BOT_TOKEN"].strip()
+    chat_id = os.environ["TELEGRAM_CHAT_ID"].strip()
 
     today = datetime.now(TZ).date()
     print(f"Collecting posts for {today} ({TZ.key})")
