@@ -1,0 +1,6 @@
+# X (Twitter) handles to follow — one per line, without @
+# Replace/add names from your Session 1 influencer list.
+jarbon          # Jason Arbon — AI testing, testers.ai
+techgirl1908    # Angie Jones — test automation, AI agents
+eviltester      # Alan Richardson — testing & automation
+jcolantonio     # Joe Colantonio — TestGuild, AI in testing
